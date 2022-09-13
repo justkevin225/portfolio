@@ -1,0 +1,57 @@
+#header .logo-name {
+  display: flex;
+  align-items: end;
+  img {
+    width: 70px;
+    transition: width 0.5s ease;
+  }
+  span {
+    font-size: 45px;
+    color: white;
+    font-weight: 700;
+    line-height: 0.8;
+    text-transform: uppercase;
+    overflow: hidden;
+    div {
+      transform: translateX(-100%);
+    }
+    &:first-of-type div {
+      animation: nameAnim 0.8s linear forwards;
+    }
+    &:last-of-type div {
+      animation: nameAnim 1s linear forwards;
+      animation-delay: 1s;
+    }
+    &:first-of-type div {
+      animation: nameAnim 1s linear forwards;
+    }
+    @keyframes nameAnim {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+#navbar ul {
+  border: none !important;
+  li {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.logo-mobile {
+  width: 35px !important;
+}
+
+@media screen and (min-width: 993px) {
+  #header.header-top .container {
+    justify-content: space-around;
+  }
+}

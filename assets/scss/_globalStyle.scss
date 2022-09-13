@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap");
+.p-about,
+p.resume-item {
+  font-family: "Maven Pro" !important;
+}
+.text-blue {
+  color: $bleu;
+}
+.text-justify {
+  text-align: justify;
+}
+.bg-blue {
+  background-color: $bleu;
+}
+em {
+  font-weight: 300 !important;
+}
+.fs-7 {
+  font-size: 13.5px;
+}
+section .container {
+  background: rgba(0, 0, 0, 0.76) !important;
+  border-radius: 5px;
+}
+section {
+  padding-bottom: 30px !important;
+}
+.interests h3 {
+  display: flex;
+  align-items: center;
+  i {
+    transform: scale(0.55);
+  }
+}
+
+.interests .icon-box {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.699);
+
+  &:hover {
+    background: rgba(0, 74, 185, 0.212);
+  }
+}
+
+.border-radius-0 {
+  border-radius: 0 !important;
+}
+.border-radius-b-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.border-radius-t-0 {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.global-container {
+  display: none;
+  overflow: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $blanc;
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-radius: 50%;
+    animation: spinerAnim 0.7s linear infinite;
+  }
+}
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: $bleu;
+}
+.portfolio .portfolio-wrap {
+  border-radius: 5px;
+}
+.portfolio .portfolio-wrap .portfolio-info p {
+  font-family: "Maven Pro";
+}
+.portfolio .portfolio-wrap:hover .portfolio-info::before {
+  border-top-left-radius: 5px;
+}
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+  border-bottom-right-radius: 5px;
+}
+
+@keyframes spinerAnim {
+  0% {
+    border: 5px solid $bleu;
+    border-bottom: 5px solid transparent;
+    transform: rotateZ(0deg);
+  }
+  33% {
+    border: 5px solid $blanc;
+    border-bottom: 5px solid transparent;
+  }
+  100% {
+    border: 5px solid $bleu;
+    border-bottom: 5px solid transparent;
+    transform: rotateZ(360deg);
+  }
+}
