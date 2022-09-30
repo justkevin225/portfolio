@@ -93,7 +93,11 @@ body {
 .portfolio .portfolio-wrap:hover .portfolio-info::after {
   border-bottom-right-radius: 5px;
 }
-
+.about-me {
+  li {
+    font-family: "Maven Pro" !important;
+  }
+}
 @keyframes spinerAnim {
   0% {
     border: 5px solid $bleu;

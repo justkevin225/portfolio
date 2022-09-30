@@ -117,6 +117,10 @@ body {
   border-bottom-right-radius: 5px;
 }
 
+.about-me li {
+  font-family: "Maven Pro" !important;
+}
+
 @keyframes spinerAnim {
   0% {
     border: 5px solid #0437c4;
@@ -245,7 +249,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-button.cv-btn {
+.cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   height: 40px;
   text-align: center;
@@ -261,13 +268,14 @@ button.cv-btn {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-button.cv-btn:hover {
+.cv-btn:hover {
   transform: scale(0.95);
+  color: #fff;
 }
-button.cv-btn:active {
+.cv-btn:active {
   letter-spacing: 2px;
 }
-button.cv-btn:after {
+.cv-btn:after {
   font-family: "Font Awesome 6 Pro";
   font-weight: bolder;
   content: "MON CV \f019";

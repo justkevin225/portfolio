@@ -3,7 +3,10 @@ $gray: #bbbbbb;
 * {
   font-family: "Roboto", sans-serif;
 }
-button.cv-btn {
+.cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   height: 40px;
   text-align: center;
@@ -22,6 +25,7 @@ button.cv-btn {
   transition: all 0.25s ease;
   &:hover {
     transform: scale(0.95);
+    color: #fff;
   }
   &:active {
     //letter-spacing: 2px;
