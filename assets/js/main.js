@@ -56,7 +56,7 @@
     .typeString('Dévéloppeur Web Fullstack')
     .pauseFor(2000)
     .deleteChars(13)
-    .typeString('mobile')
+    .typeString('mobile en herbe')
     .pauseFor(2000)
     .deleteAll()
     .typeString('UI / UX Designer')
@@ -229,10 +229,6 @@
       delay += 150
     });
   }
-
-
-
-
 
   /**
    * Testimonials slider
