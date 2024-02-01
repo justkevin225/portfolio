@@ -2,6 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    user-select: none;
+* {
+  user-select: none;
+}
+.splide__pagination__page.is-active {
+  background: white !important;
+}
+.splide__pagination__page {
+  background-color: gray !important;
+  transform: scale(0.8);
+}
+.splide__arrow--next svg, .splide__arrow--prev svg {
+  fill: white !important;
+}
+.splide__arrow--next, .splide__arrow--prev {
+  background: rgb(42, 42, 42) !important;
 }

@@ -4,6 +4,8 @@ import Stack from "./components/Stack";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { BarLoader } from "react-spinners";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 /* eslint-disable react/no-unescaped-entities */
 const App = () => {
@@ -11,6 +13,25 @@ const App = () => {
   const [procjectToggler2, setProjectToggler2] = useState(false);
   const [procjectToggler3, setProjectToggler3] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const reactSwAlert = withReactContent(Swal);
+  const toast = reactSwAlert.mixin({
+    toast: true,
+    position: "bottom-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = reactSwAlert.stopTimer;
+      toast.onmouseleave = reactSwAlert.resumeTimer;
+    },
+  });
+
+  const onCvBtnClick = () => {
+    toast.fire({
+      icon: "success",
+      title: `<span class="font-[Kanit]">Vérifiez votre liste de téléchargement</span>`,
+    });
+  };
 
   useEffect(() => {
     const images = document.querySelectorAll("img");
@@ -55,11 +76,13 @@ const App = () => {
         <div className="font-[Kanit] bg-black p-5 text-white">
           {/* TOP  */}
           <header className="flex justify-between items-center">
-            <img
-              src="./mon logo - fond noir.png"
-              alt="kev logo"
-              className="w-16 md:w-20"
-            />
+            <a href="#">
+              <img
+                src="./mon logo - fond noir.png"
+                alt="logo"
+                className="w-[100px]"
+              />
+            </a>
             <a
               href="mailto:kevinkouakou113@gmail.com"
               className="flex items-center gap-2 text-xs md:text-sm"
@@ -83,7 +106,11 @@ const App = () => {
                 </p>
                 {/* BUTTONS  */}
                 <div className="my-3 flex gap-4">
-                  <a href="./CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf" download="CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf">
+                  <a
+                    onClick={onCvBtnClick}
+                    href="./CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf"
+                    download="CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf"
+                  >
                     <Button
                       text="mon cv"
                       forceText={true}
@@ -165,9 +192,10 @@ const App = () => {
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
               </h1>
               <p>
-                J'ai plutôt des compétences basiques👀 en sécurité informatique.
-                Ainsi vous avez ci-dessous les outils et systèmes sur lesquelles
-                j'ai une petite connaissance.
+                J'ai plutôt des compétences basiques😞👀 en Test d'intrusion
+                (pentesting)💣 et en Analyse de vulnérabilités👨‍💻. Ainsi vous
+                avez ci-dessous les outils et systèmes sur lesquelles j'ai une
+                petite connaissance.
               </p>
 
               <ul className="py-3">
@@ -233,13 +261,13 @@ const App = () => {
                       CIPHONE est une site e-commerce dédié à la vente et à la
                       promotion d'une vaste gamme de produits électroniques.
                     </p>
-                    <a
+                    <span
                       href="#"
-                      className="flex items-center gap-2 text-xs my-2"
+                      className="flex items-center gap-2 text-xs my-2 text-gray-500"
                     >
                       <span>En developement</span>
-                      <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
-                    </a>
+                      <i className="fa-duotone fa-lock fa-xs"></i>
+                    </span>
                     <Splide
                       options={{
                         rewind: true,
@@ -467,7 +495,7 @@ const App = () => {
           </main>
 
           {/* FOOTER  */}
-          <footer className="text-xs text-center my-4">
+          <footer className="text-xs text-center mt-10">
             <div>
               COPYRIGHT &copy; {new Date().getFullYear()}{" "}
               <span className="font-bold">KEV PORTFOLIO</span> . Tous droits
