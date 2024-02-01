@@ -99,7 +99,7 @@ const App = () => {
                 <div className="text-xl">Salut👋, je suis</div>
                 <h1 className="text-3xl font-bold">KEVIN KOUAKOU</h1>
                 <p className="mt-2 w-full">
-                  developpeur💻 et étudiant en deuxième année de cycle ingénieur
+                  dévéloppeur💻 et étudiant en deuxième année de cycle ingénieur
                   en sécurité informatique et technologies du web 🔒. Explorez
                   mon portfolio afin de découvrir mes projets et ma passion pour
                   le numérique ! 🚀
@@ -112,7 +112,7 @@ const App = () => {
                     download="CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf"
                   >
                     <Button
-                      text="mon cv"
+                      text="MON CV"
                       forceText={true}
                       icon="fa-duotone fa-download"
                     />
@@ -194,7 +194,7 @@ const App = () => {
               <p>
                 J'ai plutôt des compétences basiques😞👀 en Test d'intrusion
                 (pentesting)💣 et en Analyse de vulnérabilités👨‍💻. Ainsi vous
-                avez ci-dessous les outils et systèmes sur lesquelles j'ai une
+                avez ci-dessous les outils et systèmes sur lesquels j'ai une
                 petite connaissance.
               </p>
 
@@ -217,7 +217,7 @@ const App = () => {
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
               </h1>
               <p>
-                J'ai fais une selection de 3 de mes projets🚀 que vous pourrez
+                J'ai fait une selection de 3 de mes projets🚀 que vous pourrez
                 explorer ci-dessous😉.
               </p>
 
@@ -258,7 +258,7 @@ const App = () => {
                     }`}
                   >
                     <p className="p-3 pt-0 font-light text-sm">
-                      CIPHONE est une site e-commerce dédié à la vente et à la
+                      CIPHONE est une plateforme e-commerce dédiée à la vente et à la
                       promotion d'une vaste gamme de produits électroniques.
                     </p>
                     <span
@@ -345,7 +345,7 @@ const App = () => {
                   >
                     <p className="p-3 pt-0 font-light text-sm">
                       Site vitrine de DEVDEBABI qui est un studio ivoirien de
-                      developpement de jeux.
+                      dévéloppement de jeux.
                     </p>
                     <a
                       rel="noreferrer"
