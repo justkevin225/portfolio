@@ -3,7 +3,7 @@ import Button from "./components/Button";
 import Stack from "./components/Stack";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import Loader from "./components/Loader";
+import { BarLoader } from "react-spinners";
 
 /* eslint-disable react/no-unescaped-entities */
 const App = () => {
@@ -40,7 +40,17 @@ const App = () => {
   return (
     <>
       {imagesLoaded === false ? (
-        <Loader />
+        <div className="h-screen w-screen bg-black">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 flex items-center justify-center flex-col">
+            <img
+              src="./mon logo - fond noir.png"
+              alt="logo"
+              className="w-[100px]"
+            />
+            <BarLoader color="#fff" />
+            <div className="text-white">Un instant...</div>
+          </div>
+        </div>
       ) : (
         <div className="font-[Kanit] bg-black p-5 text-white">
           {/* TOP  */}
