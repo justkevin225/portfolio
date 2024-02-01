@@ -1,15 +1,45 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./components/Button";
 import Stack from "./components/Stack";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import Loader from "./components/Loader";
 
 /* eslint-disable react/no-unescaped-entities */
 const App = () => {
   const [procjectToggler1, setProjectToggler1] = useState(false);
   const [procjectToggler2, setProjectToggler2] = useState(false);
   const [procjectToggler3, setProjectToggler3] = useState(false);
-  return (
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const images = document.querySelectorAll("img");
+
+    const handleImageLoad = () => {
+      // Vérifier si toutes les images sont chargées
+      const allImagesLoaded = Array.from(images).every((img) => img.complete);
+
+      if (allImagesLoaded) {
+        // Mettre à jour l'état pour indiquer que toutes les images sont chargées
+        setImagesLoaded(true);
+      }
+    };
+
+    // Attacher l'événement onLoad à chaque image
+    images.forEach((img) => {
+      img.addEventListener("load", handleImageLoad);
+    });
+
+    // Détacher les écouteurs d'événements lorsque le composant est démonté
+    return () => {
+      images.forEach((img) => {
+        img.removeEventListener("load", handleImageLoad);
+      });
+    };
+  }, []);
+  return imagesLoaded === false ? (
+    <Loader />
+  ) : (
     <div className="font-[Kanit] bg-black p-5 text-white">
       {/* TOP  */}
       <header className="flex justify-between items-center">
@@ -35,9 +65,9 @@ const App = () => {
             <h1 className="text-3xl font-bold">KEVIN KOUAKOU</h1>
             <p className="mt-2 w-full">
               developpeur💻 et étudiant en deuxième année de cycle ingénieur en
-              sécurité informatique et technologies du web 🔒 à l'ESATIC.
-              Explorez mon portfolio afin de découvrir mes projets et ma passion
-              pour le numérique ! 🚀
+              sécurité informatique et technologies du web 🔒. Explorez mon
+              portfolio afin de découvrir mes projets et ma passion pour le
+              numérique ! 🚀
             </p>
             {/* BUTTONS  */}
             <div className="my-3 flex gap-4">
@@ -48,7 +78,12 @@ const App = () => {
                   icon="fa-duotone fa-download"
                 />
               </a>
-              <a href="https://github.com/justkevin225" rel="noreferrer" target="_blank" className="hidden md:inline-block">
+              <a
+                href="https://github.com/justkevin225"
+                rel="noreferrer"
+                target="_blank"
+                className="hidden md:inline-block"
+              >
                 <Button
                   text="justkevin225"
                   icon="fa-brands fa-github"
@@ -56,14 +91,21 @@ const App = () => {
                 />
               </a>
               <a
-                href="https://github.com/justkevin225" rel="noreferrer" target="_blank"
+                href="https://github.com/justkevin225"
+                rel="noreferrer"
+                target="_blank"
                 className="md:hidden overflow-hidden group relative bg-slate-500 flex justify-center items-center px-2 rounded-md"
               >
                 <i className="fa-brands fa-github"></i>
                 <div className="absolute top-0 w-full h-1/2 bg-white opacity-30 scale-x-0 origin-left group-hover:scale-x-100 transition-all duration-300"></div>
                 <div className="absolute bottom-0 w-full h-1/2 bg-white opacity-20 scale-x-0 origin-right group-hover:scale-x-100 transition-all duration-300"></div>
               </a>
-              <a href="https://www.linkedin.com/in/kevin-kouakou-234508252/" rel="noreferrer" target="_blank" className="hidden md:inline-block">
+              <a
+                href="https://www.linkedin.com/in/kevin-kouakou-234508252/"
+                rel="noreferrer"
+                target="_blank"
+                className="hidden md:inline-block"
+              >
                 <Button
                   text="Kevin Kouakou"
                   icon="fa-brands fa-linkedin"
@@ -71,7 +113,9 @@ const App = () => {
                 />
               </a>
               <a
-                href="https://www.linkedin.com/in/kevin-kouakou-234508252/" rel="noreferrer" target="_blank"
+                href="https://www.linkedin.com/in/kevin-kouakou-234508252/"
+                rel="noreferrer"
+                target="_blank"
                 className="md:hidden overflow-hidden group relative bg-blue-500 flex justify-center items-center px-2 rounded-md"
               >
                 <i className="fa-brands fa-linkedin"></i>
@@ -252,7 +296,8 @@ const App = () => {
                 className={`my-5 ${procjectToggler2 ? "visible" : "hidden"}`}
               >
                 <p className="p-3 pt-0 font-light text-sm">
-                  Site vitrine de DEVDEBABI qui est un studio ivoirien de developpement de jeux.
+                  Site vitrine de DEVDEBABI qui est un studio ivoirien de
+                  developpement de jeux.
                 </p>
                 <a
                   rel="noreferrer"
