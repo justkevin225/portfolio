@@ -83,7 +83,7 @@ const App = () => {
                 </p>
                 {/* BUTTONS  */}
                 <div className="my-3 flex gap-4">
-                  <a href="#">
+                  <a href="./CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf" download="CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf">
                     <Button
                       text="mon cv"
                       forceText={true}
@@ -467,7 +467,7 @@ const App = () => {
           </main>
 
           {/* FOOTER  */}
-          <footer className="text-xs text-center">
+          <footer className="text-xs text-center my-4">
             <div>
               COPYRIGHT &copy; {new Date().getFullYear()}{" "}
               <span className="font-bold">KEV PORTFOLIO</span> . Tous droits
