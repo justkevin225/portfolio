@@ -38,7 +38,7 @@ const App = () => {
     };
   }, []);
   return (
-    <>
+    <div>
       {imagesLoaded === false ? (
         <div className="h-screen w-screen bg-black">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 flex items-center justify-center flex-col">
@@ -482,7 +482,7 @@ const App = () => {
           </footer>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
