@@ -192,7 +192,7 @@ const App = () => {
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
               </h1>
               <p>
-                J'ai plutôt des compétences basiques😞👀 en Test d'intrusion
+                J'ai de bonnes connaissances en Test d'intrusion
                 (pentesting)💣 et en Analyse de vulnérabilités👨‍💻. Ainsi vous
                 avez ci-dessous les outils et systèmes sur lesquels j'ai une
                 petite connaissance.
