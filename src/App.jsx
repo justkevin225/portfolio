@@ -7,6 +7,7 @@ import { BarLoader } from "react-spinners";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+
 /* eslint-disable react/no-unescaped-entities */
 const App = () => {
   const [procjectToggler1, setProjectToggler1] = useState(false);
@@ -99,8 +100,8 @@ const App = () => {
                 <div className="text-xl">Salut👋, je suis</div>
                 <h1 className="text-3xl font-bold">KEVIN KOUAKOU</h1>
                 <p className="mt-2 w-full">
-                  dévéloppeur💻 et étudiant en deuxième année de cycle ingénieur
-                  en sécurité informatique et technologies du web 🔒. Explorez
+                  dévéloppeur web💻 et étudiant en fin de cycle ingénieur
+                   (sécurité informatique et technologies du web 🔒). Explorez
                   mon portfolio afin de découvrir mes projets et ma passion pour
                   le numérique ! 🚀
                 </p>
@@ -199,14 +200,12 @@ const App = () => {
               </p>
 
               <ul className="py-3">
-                <Stack value="LINUX" />
+                <Stack value="KALI" />
                 <Stack value="WINDOWS" />
                 <Stack value="METASPLOIT" />
                 <Stack value="NESSUS" />
-                <Stack value="BURPSUITE" />
                 <Stack value="NMAP" />
-                <Stack value="OPENVAS" />
-                <Stack value="VIRTUALBOX" />
+                <Stack value="VMWARE" />
               </ul>
             </section>
 
