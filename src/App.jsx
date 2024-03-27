@@ -260,13 +260,15 @@ const App = () => {
                       CIPHONE est une plateforme e-commerce dédiée à la vente et à la
                       promotion d'une vaste gamme de produits électroniques.
                     </p>
-                    <span
-                      href="#"
-                      className="flex items-center gap-2 text-xs my-2 text-gray-500"
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://ciphone-ci.com"
+                      className="flex items-center gap-2 text-xs my-2"
                     >
-                      <span>En developement</span>
-                      <i className="fa-duotone fa-lock fa-xs"></i>
-                    </span>
+                      <span>Visiter</span>
+                      <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
+                    </a>
                     <Splide
                       options={{
                         rewind: true,
