@@ -7,12 +7,12 @@ import { BarLoader } from "react-spinners";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-
 /* eslint-disable react/no-unescaped-entities */
 const App = () => {
   const [procjectToggler1, setProjectToggler1] = useState(false);
   const [procjectToggler2, setProjectToggler2] = useState(false);
   const [procjectToggler3, setProjectToggler3] = useState(false);
+  const [procjectToggler4, setProjectToggler4] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const reactSwAlert = withReactContent(Swal);
   const toast = reactSwAlert.mixin({
@@ -100,8 +100,8 @@ const App = () => {
                 <div className="text-xl">Salut👋, je suis</div>
                 <h1 className="text-3xl font-bold">KEVIN KOUAKOU</h1>
                 <p className="mt-2 w-full">
-                  dévéloppeur web💻 et étudiant en fin de cycle ingénieur
-                   (sécurité informatique et technologies du web 🔒). Explorez
+                  dévéloppeur web fullstack en freelance💻 et étudiant en fin de cycle ingénieur
+                  (sécurité informatique et technologies du web 🔒). Explorez
                   mon portfolio afin de découvrir mes projets et ma passion pour
                   le numérique ! 🚀
                 </p>
@@ -181,8 +181,9 @@ const App = () => {
                 <Stack value="REACT" />
                 <Stack value="TAILWIND CSS" />
                 <Stack value="NODE JS" />
+                <Stack value="EXPRESS JS" />
                 <Stack value="MONGODB" />
-                <Stack value="EXPRESS" />
+                <Stack value="MYSQL" />
               </ul>
             </section>
 
@@ -193,10 +194,9 @@ const App = () => {
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
               </h1>
               <p>
-                J'ai de bonnes connaissances en Test d'intrusion
-                (pentesting)💣 et en Analyse de vulnérabilités👨‍💻. Ainsi vous
-                avez ci-dessous les outils et systèmes sur lesquels j'ai une
-                petite connaissance.
+                J'ai de bonnes connaissances en Test d'intrusion (pentesting)💣
+                et en Analyse de vulnérabilités👨‍💻. Ainsi vous avez ci-dessous
+                les outils et systèmes que j'utilise:
               </p>
 
               <ul className="py-3">
@@ -221,6 +221,92 @@ const App = () => {
               </p>
 
               <ul className="my-3 grid grid-cols-1 gap-3">
+
+                {/* PROJECT 4  */}
+                <li className="border border-gray-300 rounded-[5px] py-3 px-5">
+                  <div
+                    className={`flex justify-between p-3 rounded-[5px] ${
+                      procjectToggler4 && "bg-gray-900"
+                    }`}
+                  >
+                    <div
+                      onClick={() => setProjectToggler4((v) => !v)}
+                      className="flex gap-2 text-xs items-center cursor-pointer"
+                    >
+                      <i
+                        className={`fa-solid fa-circle-chevron-down transition-all duration-200 ${
+                          procjectToggler4 === true && "rotate-180"
+                        }`}
+                      ></i>
+                      <spand className="text-sm font-semibold flex gap-2 items-center">
+                        KEVTUNES
+                      </spand>
+                    </div>
+                    <div className="text-[10px] flex items-center gap-2">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://justkevin225.github.io/kevtunes/"
+                        className="flex items-center gap-2 text-xs"
+                      >
+                        <span>Visiter</span>
+                        <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    className={`my-5 ${
+                      procjectToggler4 ? "visible" : "hidden"
+                    }`}
+                  >
+                    <p className="p-3 pt-0 font-light text-sm">
+                      Mini plateforme d'ecoute en streaming 🎧 basée sur l'api de
+                      Spotify.
+                    </p>
+                    <Splide
+                      options={{
+                        rewind: true,
+                        perMove: 1,
+                        gap: 20,
+                        type: "loop",
+                        focus: "center",
+                        lazyLoad: "nearby",
+                        pagination: true,
+                      }}
+                      className="h-[350px] rounded-md overflow-hidden"
+                    >
+                      <SplideSlide>
+                        <img
+                          src="./images/kevtunes - 1.jpg"
+                          alt="kevtunes - 1.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/kevtunes - 2.jpg"
+                          alt="kevtunes - 2.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/kevtunes - 3.jpg"
+                          alt="kevtunes - 3.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/kevtunes - 4.jpg"
+                          alt="kevtunes - 4.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                    </Splide>
+                  </div>
+                </li>
+
                 {/* PROJECT 1  */}
                 <li className="border border-gray-300 rounded-[5px] py-3 px-5">
                   <div
@@ -242,13 +328,15 @@ const App = () => {
                       </span>
                     </div>
                     <div className="text-[10px] flex items-center gap-2">
-                      <span>REACT JS</span>
-                      <span>•</span>
-                      <span>NODE JS</span>
-                      <span className="hidden md:inline">•</span>
-                      <span className="hidden md:inline">EXPRESS</span>
-                      <span className="hidden md:inline">•</span>
-                      <span className="hidden md:inline">MONGODB</span>
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://ciphone-ci.com"
+                        className="flex items-center gap-2 text-xs"
+                      >
+                        <span>Visiter</span>
+                        <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
+                      </a>
                     </div>
                   </div>
                   <div
@@ -257,18 +345,10 @@ const App = () => {
                     }`}
                   >
                     <p className="p-3 pt-0 font-light text-sm">
-                      CIPHONE est une plateforme e-commerce dédiée à la vente et à la
-                      promotion d'une vaste gamme de produits électroniques.
+                      CIPHONE est une plateforme e-commerce dédiée à la vente et
+                      à la promotion d'une vaste gamme de produits
+                      électroniques.
                     </p>
-                    <a
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://ciphone-ci.com"
-                      className="flex items-center gap-2 text-xs my-2"
-                    >
-                      <span>Visiter</span>
-                      <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
-                    </a>
                     <Splide
                       options={{
                         rewind: true,
@@ -334,9 +414,15 @@ const App = () => {
                       </spand>
                     </div>
                     <div className="text-[10px] flex items-center gap-2">
-                      <span>BOOTSTRAP</span>
-                      <span>•</span>
-                      <span>VANILLA JS</span>
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://devdebabi.com"
+                        className="flex items-center gap-2 text-xs"
+                      >
+                        <span>Visiter</span>
+                        <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
+                      </a>
                     </div>
                   </div>
                   <div
@@ -348,15 +434,6 @@ const App = () => {
                       Site vitrine de DEVDEBABI qui est un studio ivoirien de
                       dévéloppement de jeux.
                     </p>
-                    <a
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://devdebabi.com"
-                      className="flex items-center gap-2 text-xs my-2"
-                    >
-                      <span>Visiter</span>
-                      <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
-                    </a>
                     <Splide
                       options={{
                         rewind: true,
@@ -401,7 +478,7 @@ const App = () => {
                   </div>
                 </li>
 
-                {/* PROJECT 3 */}
+                {/* PROJECT 3  */}
                 <li className="border border-gray-300 rounded-[5px] py-3 px-5">
                   <div
                     className={`flex justify-between p-3 rounded-[5px] ${
@@ -418,15 +495,14 @@ const App = () => {
                         }`}
                       ></i>
                       <spand className="text-sm font-semibold flex gap-2 items-center">
-                        MEDIPROXPERT
+                        GC2CARDS - DASHBOARD
                       </spand>
                     </div>
                     <div className="text-[10px] flex items-center gap-2">
-                      <span>HTML</span>
-                      <span>•</span>
-                      <span>CSS</span>
-                      <span>•</span>
-                      <span>JS</span>
+                      <span className="flex items-center gap-2 text-xs">
+                        <span>En cours</span>
+                        <i className="fa-duotone fa-lock fa-xs"></i>
+                      </span>
                     </div>
                   </div>
                   <div
@@ -435,19 +511,9 @@ const App = () => {
                     }`}
                   >
                     <p className="p-3 pt-0 font-light text-sm">
-                      Site vitrine de MEDIPROXPERT qui est une entreprise de
-                      vente de produits pharmaceutiques, parapharmaceutiques et
-                      de matériels médicaux basée en Côte d'Ivoire.
+                      Dashboard de gestion de la plateforme gc2cards (Site
+                      e-commerce de vente de cartes cadeaux et d'abonnements)
                     </p>
-                    <a
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://mediproxpert.ci"
-                      className="flex items-center gap-2 text-xs my-2"
-                    >
-                      <span>Visiter</span>
-                      <i className="fa-duotone fa-arrow-up-right-from-square fa-xs"></i>
-                    </a>
                     <Splide
                       options={{
                         rewind: true,
@@ -462,29 +528,29 @@ const App = () => {
                     >
                       <SplideSlide>
                         <img
-                          src="./images/mediproxpert - 1.jpg"
-                          alt="mediproxpert - 1.jpg"
+                          src="./images/gc2cards - dashboard 1.jpg"
+                          alt="gc2cards - dashboard - 1.jpg"
                           className="object-cover h-[300px] w-full"
                         />
                       </SplideSlide>
                       <SplideSlide>
                         <img
-                          src="./images/mediproxpert - 2.jpg"
-                          alt="mediproxpert - 2.jpg"
+                          src="./images/gc2cards - dashboard 2.jpg"
+                          alt="gc2cards - dashboard - 2.jpg"
                           className="object-cover h-[300px] w-full"
                         />
                       </SplideSlide>
                       <SplideSlide>
                         <img
-                          src="./images/mediproxpert - 3.jpg"
-                          alt="mediproxpert - 3.jpg"
+                          src="./images/gc2cards - dashboard 3.jpg"
+                          alt="gc2cards - dashboard - 3.jpg"
                           className="object-cover h-[300px] w-full"
                         />
                       </SplideSlide>
                       <SplideSlide>
                         <img
-                          src="./images/mediproxpert - 4.jpg"
-                          alt="mediproxpert - 4.jpg"
+                          src="./images/gc2cards - dashboard 4.jpg"
+                          alt="gc2cards - dashboard - 4.jpg"
                           className="object-cover h-[300px] w-full"
                         />
                       </SplideSlide>
