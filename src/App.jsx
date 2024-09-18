@@ -13,6 +13,7 @@ const App = () => {
   const [procjectToggler2, setProjectToggler2] = useState(false);
   const [procjectToggler3, setProjectToggler3] = useState(false);
   const [procjectToggler4, setProjectToggler4] = useState(false);
+  const [procjectToggler5, setProjectToggler5] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const reactSwAlert = withReactContent(Swal);
   const toast = reactSwAlert.mixin({
@@ -74,9 +75,9 @@ const App = () => {
           </div>
         </div>
       ) : (
-        <div className="font-[Kanit] bg-black p-5 text-white">
+        <div className="font-[Kanit] bg-black text-white">
           {/* TOP  */}
-          <header className="flex justify-between items-center">
+          <header className="flex justify-center items-center">
             <a href="#">
               <img
                 src="./mon logo - fond noir.png"
@@ -84,33 +85,26 @@ const App = () => {
                 className="w-[100px]"
               />
             </a>
-            <a
-              href="mailto:kevinkouakou113@gmail.com"
-              className="flex items-center gap-2 text-xs md:text-sm"
-            >
-              <i className="fa-solid fa-at"></i>
-              <span className="select-text">kevinkouakou113@gmail.com</span>
-            </a>
           </header>
-          <main className="mx-auto md:w-[65%] lg:w-[55%]">
+          <main className="mx-auto w-[90%] md:w-[65%] lg:w-[55%]">
             {/* WELCOME  */}
             <section>
               {/* BODY  */}
-              <div className="mx-4 mt-20">
+              <div className="mt-6">
                 <div className="text-xl">Salut👋, je suis</div>
                 <h1 className="text-3xl font-bold">KEVIN KOUAKOU</h1>
-                <p className="mt-2 w-full">
-                  dévéloppeur web fullstack en freelance💻 et étudiant en fin de cycle ingénieur
-                  (sécurité informatique et technologies du web 🔒). Explorez
-                  mon portfolio afin de découvrir mes projets et ma passion pour
-                  le numérique ! 🚀
+                <p className="mt-2 w-full text-justify">
+                  dévéloppeur web fullstack en freelance 💻 avec une expérience éprouvée
+                  dans la fourniture de solutions de haute qualité. Explorez mon
+                  portfolio afin de découvrir mes projets et ma passion pour le
+                  numérique ! 🚀
                 </p>
                 {/* BUTTONS  */}
                 <div className="my-3 flex gap-4">
                   <a
                     onClick={onCvBtnClick}
-                    href="./CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf"
-                    download="CV.KOUAKOU.KEVIN.M2SITW_2023_2024.pdf"
+                    href="./CV - KEVIN KOUAKOU.pdf"
+                    download="CV - KEVIN KOUAKOU.pdf"
                   >
                     <Button
                       text="MON CV"
@@ -167,7 +161,7 @@ const App = () => {
             </section>
 
             {/* STACKS  */}
-            <section className="mx-4 mt-16">
+            <section className="mt-8 text-justify">
               <h1 className="relative text-2xl font-semibold my-2">
                 <span>STACKS</span>
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
@@ -178,6 +172,8 @@ const App = () => {
               </p>
 
               <ul className="py-3">
+                <Stack value="JAVASCRIPT" />
+                <Stack value="TYPESCRIPT" />
                 <Stack value="REACT" />
                 <Stack value="TAILWIND CSS" />
                 <Stack value="NODE JS" />
@@ -187,41 +183,18 @@ const App = () => {
               </ul>
             </section>
 
-            {/* SECURITY  */}
-            <section className="mx-4 mt-10">
-              <h1 className="relative text-2xl font-semibold my-2">
-                <span>{"SECURITé".toUpperCase()}</span>
-                <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
-              </h1>
-              <p>
-                J'ai de bonnes connaissances en Test d'intrusion (pentesting)💣
-                et en Analyse de vulnérabilités👨‍💻. Ainsi vous avez ci-dessous
-                les outils et systèmes que j'utilise:
-              </p>
-
-              <ul className="py-3">
-                <Stack value="KALI" />
-                <Stack value="WINDOWS" />
-                <Stack value="METASPLOIT" />
-                <Stack value="NESSUS" />
-                <Stack value="NMAP" />
-                <Stack value="VMWARE" />
-              </ul>
-            </section>
-
             {/* PROJECTS  */}
-            <section className="mx-4 mt-10">
+            <section className="mt-8">
               <h1 className="relative text-2xl font-semibold my-2">
                 <span>PROJETS</span>
                 <div className="bg-white bottom-0 left-0 w-12 h-1"></div>
               </h1>
-              <p>
-                J'ai fait une selection de 3 de mes projets🚀 que vous pourrez
+              <p className="text-justify">
+                J'ai fait une selection de quelques uns de mes projets 🚀 que vous pourrez
                 explorer ci-dessous😉.
               </p>
 
               <ul className="my-3 grid grid-cols-1 gap-3">
-
                 {/* PROJECT 4  */}
                 <li className="border border-gray-300 rounded-[5px] py-3 px-5">
                   <div
@@ -260,8 +233,8 @@ const App = () => {
                     }`}
                   >
                     <p className="p-3 pt-0 font-light text-sm">
-                      Mini plateforme d'ecoute en streaming 🎧 basée sur l'api de
-                      Spotify.
+                      Mini plateforme d'ecoute en streaming 🎧 basée sur l'api
+                      de Spotify.
                     </p>
                     <Splide
                       options={{
@@ -478,6 +451,91 @@ const App = () => {
                   </div>
                 </li>
 
+                {/* PROJECT 5  */}
+                <li className="border border-gray-300 rounded-[5px] py-3 px-5">
+                  <div
+                    className={`flex justify-between p-3 rounded-[5px] ${
+                      procjectToggler5 && "bg-gray-900"
+                    }`}
+                  >
+                    <div
+                      onClick={() => setProjectToggler5((v) => !v)}
+                      className="flex gap-2 text-xs items-center cursor-pointer"
+                    >
+                      <i
+                        className={`fa-solid fa-circle-chevron-down transition-all duration-200 ${
+                          procjectToggler5 === true && "rotate-180"
+                        }`}
+                      ></i>
+                      <spand className="text-sm font-semibold flex gap-2 items-center">
+                        GC2CARDS
+                      </spand>
+                    </div>
+                    <div className="text-[10px] flex items-center gap-2">
+                      <span className="flex items-center gap-2 text-xs">
+                        <i className="fa-duotone fa-lock fa-xs"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className={`my-5 ${
+                      procjectToggler5 ? "visible" : "hidden"
+                    }`}
+                  >
+                    <p className="p-3 pt-0 font-light text-sm">
+                      Plateforme e-commerce de vente de cartes cadeaux et d'abonnements.
+                    </p>
+                    <Splide
+                      options={{
+                        rewind: true,
+                        perMove: 1,
+                        gap: 20,
+                        type: "loop",
+                        focus: "center",
+                        lazyLoad: "nearby",
+                        pagination: true,
+                      }}
+                      className="h-[350px] rounded-md overflow-hidden"
+                    >
+                      <SplideSlide>
+                        <img
+                          src="./images/gc2cards 1.jpg"
+                          alt="gc2cards 1.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/gc2cards 2.jpg"
+                          alt="gc2cards 2.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/gc2cards 3.jpg"
+                          alt="gc2cards 3.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/gc2cards 4.jpg"
+                          alt="gc2cards 4.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                      <SplideSlide>
+                        <img
+                          src="./images/gc2cards 5.jpg"
+                          alt="gc2cards 5.jpg"
+                          className="object-cover h-[300px] w-full"
+                        />
+                      </SplideSlide>
+                    </Splide>
+                  </div>
+                </li>
+
                 {/* PROJECT 3  */}
                 <li className="border border-gray-300 rounded-[5px] py-3 px-5">
                   <div
@@ -495,12 +553,11 @@ const App = () => {
                         }`}
                       ></i>
                       <spand className="text-sm font-semibold flex gap-2 items-center">
-                        GC2CARDS - DASHBOARD
+                        GC2CARDS - BACKOFFICE
                       </spand>
                     </div>
                     <div className="text-[10px] flex items-center gap-2">
                       <span className="flex items-center gap-2 text-xs">
-                        <span>En cours</span>
                         <i className="fa-duotone fa-lock fa-xs"></i>
                       </span>
                     </div>
@@ -562,7 +619,7 @@ const App = () => {
           </main>
 
           {/* FOOTER  */}
-          <footer className="text-xs text-center mt-10">
+          <footer className="text-xs text-center mt-10 pb-5 w-[90%] mx-auto">
             <div>
               COPYRIGHT &copy; {new Date().getFullYear()}{" "}
               <span className="font-bold">KEV PORTFOLIO</span> . Tous droits
